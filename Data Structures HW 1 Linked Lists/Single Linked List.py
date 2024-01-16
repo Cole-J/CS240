@@ -25,6 +25,9 @@ class linked_list:
         return i
         
     def read(self, pos):
+        if (pos > self.length()):
+            print("ERROR (read): " + str(pos) + " not added as its out of bounds")
+            return
         i = 0
         cn = self.first_node
         while i < pos and cn.next_node is not None:
@@ -79,39 +82,22 @@ class linked_list:
                 return i
             i += 1
             cn = cn.next_node
+        print("ERROR (search): " + str(data) + " not found, returned -1")
         return -1
 
     def sort(self):
         cn = self.first_node
         while (cn is not None):
             min_node = cn
-            runner  = cn.next_node
+            nn  = cn.next_node
 
-            while (runner is not None):
-                if runner.data < min_node.data:
-                    min_node = runner
-                runner = runner.next_node
+            while (nn is not None):
+                if nn.data < min_node.data:
+                    min_node = nn
+                nn = nn.next_node
             cn.data, min_node.data = min_node.data, cn.data
             cn = cn.next_node
 
-
-'''
-class linked_list:
-    def __init__(self):
-        self.first_node = None
-
-    def add(self, data):
-        node = NODE(data)
-        if (self.first_node is None):
-            # no first node
-            self.first_node = node
-        else:
-            # first node exists
-            current_node = self.first_node
-            while (current_node.next_node is not None):
-                current_node = current_node.next_node
-            current_node.next_node = node
-'''
 
 # ========== main code ========== #
 
@@ -127,7 +113,7 @@ ll.insert(3, 3)
 ll.insert(6,2)
 ll.insert(5, 0)
 
-#ll.sort()
+ll.sort()
 #print(ll.search(3))
 #print(ll.read(1))
 #print(ll.length())

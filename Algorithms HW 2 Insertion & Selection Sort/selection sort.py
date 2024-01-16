@@ -19,6 +19,8 @@ in the next iterations you are finding the next smallest value and swapping it w
 this is repreated until you get to the final index.
 
 because it is a nested for loop it has a big O of O(n^2) or quadratic time time complexity.
+its best case will be when the array is already sorted.
+the worst case will be when the array is in reverse order.
 '''
 
 # ========== function definitions ========== #

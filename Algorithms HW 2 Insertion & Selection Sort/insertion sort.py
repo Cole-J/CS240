@@ -42,6 +42,8 @@ if it is you loop to the left to find where it is no longer less than the elemen
 as you loop to the left you also are properly swapping the variables.
 
 because it is a nested loop it has a big O of O(n^2) or quadratic time time complexity.
+its best case will be when the array is already sorted.
+the worst case will be when the array is in reverse order.
 '''
 
 # ========== function definitions ========== #

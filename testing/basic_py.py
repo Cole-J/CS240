@@ -5,3 +5,9 @@ def file_to_arr(fn):
         arr.append(int(line)) # append the line after its converted to an integer
     f.close() # close the file
     return arr # return the full array
+
+def linear_search(target, arr):
+    for i in range(len(arr)):
+        if (arr[i] == target):
+            return i
+    return -1

@@ -36,7 +36,7 @@ def bsa(element, arr, low, high, op_count):
 # parameters are an element to search for and the array to search in
 def print_data(element, arr):
     # gets the index and the number of times it took to get to that index
-    idx, opc = bsa(element, arr, 0, len(arr) - 1, 0)
+    idx, opc = bsa(element, arr, 0, len(arr), 0)
     # if no index was found
     if (idx == -1):
         print("element " + str(element) + " not found in array in " + str(opc) + " operations")

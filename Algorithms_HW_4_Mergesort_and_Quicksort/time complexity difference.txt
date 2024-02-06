@@ -1,0 +1,6 @@
+both have the same time complexity of O(n*log(n))
+
+the worst case for merge sort would be if the array is sorted in descending order.
+
+the worst case for quick sort would be if the pivot is the largest or smallest value in the array, in which
+case the time complexity would be closer to O(n^2)

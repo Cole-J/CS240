@@ -55,6 +55,14 @@ binary search tree class
             # print root data for in order
             traverse to roots right
             # print root data for post order
+
+    search functions in orders
+        if root exists
+            # check for pre order
+            traverse to root left
+            # check for in order
+            traverse to root right
+            # check for post order
 '''
 
 # ========== function code ========== #
@@ -155,7 +163,7 @@ class BST:
         return None
 
 
-    '''print functions have O(n) time complexity'''
+    '''print and search functions have O(n) time complexity'''
 
     # print data in pre order
     def print_pre_order(self, root = 0):
@@ -193,12 +201,70 @@ class BST:
             # print in post order
             print(root)
 
+    # function to search for a key in pre order
+    def search_pre_order(self, key, root = 0):
+        # checks if its the first run of the function
+        if root == 0:
+            root = self.root
+        # if current root exists
+        if root:
+            # key found
+            if (key == root.key):
+                return root.data
+            # check to the left
+            elif key < root.key and root.left:
+                return self.search_pre_order(key, root.left)
+            # check to the right
+            elif key > root.key and root.right:
+                return self.search_pre_order(key, root.right)
+            else:
+                return None
+        return None
+    
+    # function to search for a key in in order
+    def print_in_order(self, key, root = 0):
+        # checks if its the first run of the function
+        if root == 0:
+            root = self.root
+        # if current root exists
+        if root:
+            # check to the left
+            if key < root.key and root.left:
+                return self.search_pre_order(key, root.left)
+            # key found
+            elif (key == root.key):
+                return root.data
+            # check to the right
+            elif key > root.key and root.right:
+                return self.search_pre_order(key, root.right)
+            else:
+                return None
+    
+    # function to search for a key in post order
+    def print_post_order(self, key, root = 0):
+        # checks if its the first run of the function
+        if root == 0:
+            root = self.root
+        # if current root exists
+        if root:
+            # check to the left
+            if key < root.key and root.left:
+                return self.search_pre_order(key, root.left)
+            # check to the right
+            elif key > root.key and root.right:
+                return self.search_pre_order(key, root.right)
+            # key found
+            elif (key == root.key):
+                return root.data
+            else:
+                return None
+
 
 # ========== main code ========== #
     
 
 #array = [(4, 'a'), (2, '56'), (5, 'as'), (1, '412'), (6, '6d'), (3, 'dsa'), (7, '7')]
-array = [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g')]
+array = [(0, '0'), (1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g')]
 
 
 tree = BST(array)
@@ -210,3 +276,5 @@ print(tree.search(5))
 tree.print_pre_order()
 #tree.print_in_order()
 #tree.print_post_order()
+
+print(tree.search_pre_order(0))

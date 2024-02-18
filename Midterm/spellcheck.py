@@ -15,7 +15,7 @@ class SPELLCHECK:
     # hash table size
     # hash table base and mode
     # and the threshold for finding words close to another
-    def __init__(self, size, base, mod, threshold):
+    def __init__(self, size, base, mod, threshold): # O(n) -> O(threshold)
         self.hash_table = hashtable_linkedlist(size, base, mod) # create table
         self.threshold = threshold
         self.min_max_array = [] # create a array with the range [-threshold to threshold] without 0
@@ -24,11 +24,11 @@ class SPELLCHECK:
         self.min_max_array.remove(0)
 
     # function to add a word to the table
-    def add_word(self, word):
+    def add_word(self, word): # O(1) -> O(n)
         self.hash_table.add(word, word)
 
     # function to get the edit distance of 2 strings
-    def levenshtein_distance(self, str1, str2):
+    def levenshtein_distance(self, str1, str2): # O(n)
         len_str1 = len(str1) + 1
         len_str2 = len(str2) + 1
         # initialize a matrix to store the distances
@@ -51,7 +51,7 @@ class SPELLCHECK:
         return matrix[len_str1 - 1][len_str2 - 1]
 
     # function that creates an array of keys close to a passed key
-    def find_closest_entry(self, known_key):
+    def find_closest_entry(self, known_key): # O(1) -> O(n)
         closest_entry_array = [] # create empty array
         for i in self.min_max_array: # for each index that is +- the threshold
             hash_value = self.hash_table.hash(known_key) + i # create the known hash +- threshold

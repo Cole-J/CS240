@@ -1,3 +1,5 @@
+using this file to keep track of what I have done and what needs to be done
+
 hanois tower
     using recursion
     using iteration

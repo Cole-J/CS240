@@ -1,7 +1,26 @@
 hanois tower
+    using recursion
+    using iteration
+    compare the complexity / differences
+    create a gui
+
+You should submit your code, a brief report that includes your approach, 
+the results of your performance comparison, 
+and a brief user manual on how to run and use your GUI.
+
 hanois tower video
 
 spell check
+    dict via hash table
+    add suggestion feature
+    allow user to add new words
+    be user friendly
+
+You should submit your program, the dictionary file 
+and a report explaining your approach and the optimization 
+techniques you have used. 
+Also, include performance measurements and a brief user manual.
+
 spell check video
 
 code library done

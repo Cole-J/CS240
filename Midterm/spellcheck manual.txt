@@ -1,6 +1,31 @@
 report
 
-I started by making the hash t
+I first worked to get the hash table working in the spellcheck class. I used linked lists to handle collisions as
+if 2 values have the same hash the new value will be added to the end of the list.
 
+After that I finished making it so you could get or add words to the hash table.
+
+Once I has that done I worked on the logic for the run function which is the main loop for the terminal ui.
+When the logic was done I moved onto making the find_closest_entry function and once it and the levenshtein_distance
+functions were done I finished the run function.
+
+I decided to use linked lists for the hash table collisions as I figured it would have a better runtime scaling
+compared to using arrays and uses less space in the array proper to store values. the program is able
+to find the right list in O(1) and then takes O(n) to find the specific key, which is better than the O(n)
+I would have when using arrays for the hash table collisions.
+
+It is stated in the file but the google-10000-english-no-swears.txt file was used for a reference for the spellcheck.
 
 manual
+when running the program you have the option to quit (q), add a word (a) or check a string (c).
+
+if you type (a) and type in a string it will be added to the spellchecks hash table
+
+if you type (c) and type in a long string, you may be given a prompt that one of the words in the string was
+not found in the hash table, and it will give you a word close to the one you typed, 
+    you can then type (a) to add the word to the hash table,
+    you can type (y) to accept the close word it found and the misspelled word will be replaced with it,
+    you can type (n) to not accept the current suggestion and it will give you another one,
+    you can type (q) to have it stop giving you suggestions,
+
+and then it will print the long string at the end

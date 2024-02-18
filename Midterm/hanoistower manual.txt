@@ -1,5 +1,26 @@
 report
+I started by making the recursive solution based off the one I made in cs145 but made it append the move to an
+array.
+
+I was having some issues making the iterative version so I jumped to making the ui.
+I decided that the solution functions would generate an array of moves that can be done to solve the problem.
+The play function then takes the moves array and creates another array called towers. the array called towers issues
+then used to simulate towers as each move from the moves array is made.
+After the move is made on the simulated towers another function is then called to display the towers current 
+informaiton.
+
+After that I once again started work on the iterative solution. I looked online for a bit and found that people used
+a helper array / stack to make sure that information was properly saved in the iterative solution. I then worked to
+add a stack into the function and based the way it would iterate on the path the recursive solution would take.
+I then compared the 2 functions outputs and made small tweaks until they consistently gave the same output.
 
 difference in time complexity
+from what I can tell they seem to have the same time complexity of O(2^n). That being said the iterative version
+is a much more complex function. In the end the recursive solution is give the same output, for the same complexity,
+while being much simpler.
 
 manual
+when you run the program you will be asked how many discs should be solved for,
+you can type (q) to quit the program or an integer.
+it will then ask how many seconds should be spend on each frame and you can give it a float value or whole integer.
+it will then show the steps in the terminal on how to solve the problem with that many discs.

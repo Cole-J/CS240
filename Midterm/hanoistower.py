@@ -173,6 +173,8 @@ class TOWER_OF_HANOI:
             self.play(spf)
 
 # create the class
-toh = TOWER_OF_HANOI()
+toh = TOWER_OF_HANOI(0, "start  :", 
+                        "target :", 
+                        "aux    :")
 # start the main loop
 toh.gui()

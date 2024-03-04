@@ -103,6 +103,8 @@ dfs.add(p2)
 
 # set the amount of moves and it will loop through the bfs and dfs graph for that long
 moves = 5
+
+# print each move through the graph
 for move in range(moves + 1):
     print(f"bfs after {move} moves: {bfs.pop_after_moves(move)}")
     print(f"dfs after {move} moves: {dfs.pop_after_moves(move)}")

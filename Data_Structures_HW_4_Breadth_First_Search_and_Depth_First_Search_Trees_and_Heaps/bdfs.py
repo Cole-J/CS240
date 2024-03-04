@@ -3,6 +3,7 @@ Cole Johnson 2/29
 For CS240
 '''
 
+# class to store key, data, and neighbor node array
 class Node:
     def __init__(self, key, data, neighbor = []):
         self.key = key
@@ -11,6 +12,7 @@ class Node:
     def __str__(self):
         return self.key
 
+# class to store functions for bfs or dfs
 class BDFS:
     def __init__(self, type):
         self.graph = []

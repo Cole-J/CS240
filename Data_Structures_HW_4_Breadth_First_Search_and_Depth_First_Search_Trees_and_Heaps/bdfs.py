@@ -3,6 +3,8 @@ Cole Johnson 2/29
 For CS240
 '''
 
+# ==================== classes ==================== #
+
 # class to store key, data, and neighbor node array
 class Node:
     def __init__(self, key, data, neighbor = []):
@@ -79,21 +81,26 @@ class BDFS:
         if graph:
             return graph.pop(0)
         return None
+    
+# ==================== main code ==================== #
 
 # creating the class
 bfs = BDFS('BFS')
 dfs = BDFS('DFS')
+
 # creating p nodes
 p5 = Node("p5", 5)
 p3 = Node("p3", 3)
 p4 = Node("p4", 4, [p5])
 p1 = Node("p1", 1, [p3, p4])
 p2 = Node("p2", 2)
+
 # add root p nodes to the class graphs
 bfs.add(p1)
 bfs.add(p2)
 dfs.add(p1)
 dfs.add(p2)
+
 # set the amount of moves and it will loop through the bfs and dfs graph for that long
 moves = 5
 for move in range(moves + 1):

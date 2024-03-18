@@ -22,15 +22,15 @@ function def
     return binary
 '''
 
-def convert_to_binary_r(number):
+def to_binary_r(number):
     # base case
     if number == 0:
         return 0
     # general case
     else:
-        return (number % 2 + 10 * convert_to_binary_r(int(number // 2)))
+        return (number % 2 + 10 * to_binary_r(int(number // 2)))
     
-def convert_to_binary_i(number):
+def to_binary_i(number):
     # if num is 0 return 0
     if number == 0:
         return 0
@@ -46,8 +46,8 @@ def convert_to_binary_i(number):
     # return binary
     return binary_number
 
-#print(convert_to_binary_r(10))
-#print(convert_to_binary_i(10))
+#print(to_binary_r(10))
+#print(to_binary_i(10))
 
 '''
 they have the same runtime however the recursive version is much simpler.
